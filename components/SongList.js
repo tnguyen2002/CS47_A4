@@ -12,7 +12,7 @@ import Song from "./Song.js";
 const windowWidth = Dimensions.get("window").width;
 const windowHeight = Dimensions.get("window").height;
 
-const SongList = ({ tracks }) => {
+const SongList = ({ tracks, navigation }) => {
   //   console.log("song artist", item.songArtists);
   return (
     <View styles={styles.container}>
@@ -34,6 +34,9 @@ const SongList = ({ tracks }) => {
             songImage={item.imageUrl}
             songAlbum={item.albumName}
             key={item.id}
+            navigation={navigation}
+            previewUrl={item.previewUrl}
+            externalUrl={item.externalUrl}
           />
         )}
         keyExtractor={(item) => item.id}
